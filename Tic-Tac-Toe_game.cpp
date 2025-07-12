@@ -10,11 +10,13 @@ bool checkWinner(char *spaces, char player, char computer);
 bool checkTie(char *spaces);
 
 int main(){
-
+    char cont;
+    do{
     char spaces[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
     char player = 'X';
     char computer = 'O';
     bool running = true;
+
 
     drawBoard(spaces);
 
@@ -47,6 +49,10 @@ int main(){
 
     }
     std::cout << "Thanks for Playing!!!\n";
+    std::cout << "Would you like to play again? (Y/N)\n";
+    std::cin >> cont;
+    cont = toupper(cont);
+    }while(cont == 'Y');
 
     return 0;
 }
